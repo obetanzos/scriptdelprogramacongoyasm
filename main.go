@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Declaración de funciones implementadas en ensamblador.
+// Declaración de funciones implementadas en ensamblador
 func SumarASM(a int64, b int64) int64
 func MultiplicarASM(a int64, b int64) int64
 func SumarVectorASM(vector []int64) int64
