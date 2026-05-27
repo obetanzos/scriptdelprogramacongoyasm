@@ -1,0 +1,4 @@
+go clean -testcache
+go clean -cache
+go test -list=Benchmark
+go test -bench=Benchmark -benchmem -count=30 > resultados_benchmark.txt

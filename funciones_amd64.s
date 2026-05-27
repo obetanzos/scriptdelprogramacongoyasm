@@ -12,11 +12,11 @@ TEXT ·MultiplicarASM(SB), NOSPLIT, $0-24
     MOVQ AX, ret+16(FP)
     RET
 
-TEXT ·SumarVectorASM(SB), NOSPLIT, $0-24
-    MOVQ vector+0(FP), SI
-    MOVQ n+8(FP), CX
-    XORQ AX, AX
-    XORQ DX, DX
+TEXT ·SumarVectorASM(SB), NOSPLIT, $0-32    
+    MOVQ vector+0(FP), SI   // SI = Puntero al inicio del arreglo
+    MOVQ vector+8(FP), CX   // CX = Longitud del vector (len)
+    XORQ AX, AX             // AX = Acumulador de la suma (0)
+    XORQ DX, DX             // DX = Índice de iteración (i = 0)
 
 ciclo:
     CMPQ DX, CX
@@ -26,6 +26,6 @@ ciclo:
     JMP ciclo
 
 fin:
-    MOVQ AX, ret+16(FP)
+    MOVQ AX, ret+24(FP)
     RET
     
